@@ -11,4 +11,4 @@ class Hparams:
     learn_rate:float = 1e-3
 
     ### Training ###
-    epochs:int = 50
+    epochs:int = 5

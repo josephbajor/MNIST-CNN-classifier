@@ -21,10 +21,10 @@ class MNIST(Dataset):
         dat = self.X[index].reshape(28,28)
         dat = np.expand_dims(dat, axis=0)
 
-        label = torch.tensor(label)
-        dat = torch.tensor(dat)
+        label = torch.tensor(label, dtype=torch.long, device='cuda')
+        dat = torch.tensor(dat, dtype=torch.float, device='cuda')
 
-        return label.float().to('cuda'), dat.float().to('cuda')
+        return label, dat
 
 
 def load_data_old(hparams):

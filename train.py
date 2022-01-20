@@ -13,6 +13,7 @@ def train(hparams):
 
 
     for epoch in range(hparams.epochs):
+        total_loss = 0.0
         for label, dat in trainloader:
 
             opt.zero_grad()
@@ -22,6 +23,6 @@ def train(hparams):
             loss.backward()
             opt.step()
 
-            print(f"batch loss: {loss.item()}")
+            total_loss += loss.item()
 
-    print(f"Epoch: {epoch}")
+        print(f"Loss for Epoch {epoch+1}: {total_loss}")
