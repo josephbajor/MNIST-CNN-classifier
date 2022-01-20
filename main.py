@@ -8,7 +8,7 @@ def main():
 
     hparams = Hparams()
 
-    train(hparams)
+    train(hparams, load=True)
 
 
 if __name__ == "__main__":
